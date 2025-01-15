@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,300;1,300&family=Noto+Sans:ital@0;1&family=Oswald:wght@200..700&display=swap');
+
+/* . = class / # = id */
+
+body {
+    padding: 0 2%; /* espace a l'interieur d'un element entre son contenu et ses bordures ( marges )*/
+    margin: 0; /* marge autour d'un élément a l'exterieur des bordures |GERER LESPACEMENT ENTRE LES ELEMENTS */
+    font-family: "Noto Sans", serif; /* police */
+}
+nav {
+    display: flex; /* aligner les elements */
+    flex-wrap: wrap; /* aller a la ligne */
+    justify-content: space-between; /* mettre un espace entre la div et la liste */
+    align-items: center;/* aligner les elements a la vertical au niveau barre de navigation*/
+    background-color: white; /* couleur d'arriére plan */
+    position: sticky; /* la barre de navigation va rester en haut de le page sans disparaitre + top=0*/
+    top: 0;
+}
+
+nav .profile {
+    display: flex;
+    align-items: center;/* centrer le titre a l'image */
+}
+
+nav .profile img { /* modifier la taille de l'image avec width et height */
+    width: 60px; /* largeur */
+    height: 60px;/* hauteur*/
+    border-radius: 50%;/* arondir les bords */
+    margin-top: 5px;
+    transition: filter 0.5s;
+}
+
+nav .profile img:hover{
+    filter: brightness(0%); /* effet au niveau de l'image en couple avec transition au dessu*/
+
+}
+
+nav .profile h1 {
+    margin-left: 10px; /* marge a l'exterieur a gauche */
+    font-size: 20px;/* modifier la taille de la police H1*/ 
+}
+
+nav ul {
+    display: flex;
+    font-size: 18px;
+    list-style-type: none; /* enlever les puces sur la liste*/
+    }
+
+nav ul li {
+    margin-left: 20px; /* mettre une marge a l'extérieur de chaques éléments ( mettre un espace ) */
+    cursor: pointer;/* mettre un curseur en pointeur lorsque l'utilisateur place son curseur sur l'element */
+    border-bottom: 1px solid white; /* modifier la couleur de la bordure lorsque l'utilisateur va placer son 
+    curseur au dessu de chaque élément*/
+}
+
+nav ul li:hover { /*modifier la couleur de la bordure lorsque l'utilisateur va placer son curseur */
+    border-bottom-color: black;
+}
+
+.page-content {
+    margin: 4%;
+}
+
+.page-content header {
+    margin-top: 5%;
+    max-width: 80%; /* largeur MAX */
+}
+
+.page-content header h1 {
+    margin: 0;
+    text-transform: uppercase;/* mettre le texte en MAJUSCULE */
+    font-family:'Oswald', 'sans-serif';
+    font-size: 6vw; /*vw = wiewport width */
+}
+
+.page-content header p {
+    line-height: 30px;/* agrandir l'espace qu'il y a entre chaque lignes */
+    color: #818181;
+
+}
+
+.page-content header button {
+    background-color: inherit; /* inherit = prendre la couleur de son parent */
+    border: none; /* retirer les bordures autour du bouton */
+    outline: none; /* retirer la couleur de bordure */
+    padding:0;
+    font-size: 15px;
+    font-weight: bold; /* définit l'epaisseur du texte, en gras */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc; /* bordure grise en dessou du text ME CONTACTER! */
+    cursor: pointer;
+
+}
+
+.page-content header button:hover { /*inverser les couleurs*/
+    color: aqua;
+    border-bottom-color: black;
+}
+
+.page-content .presentation-image {
+    margin-top: 5%; /* mettre un espace, ici entre le header et l'image */
+}
+
+.page-content .presentation-image img {
+    max-width: 100%;
+    height: auto; /* hauteur automatique a l'image */
+}
+
+.page-content .projets-section {
+    margin-top: 6%;
+}
+
+.page-content .projets-section h1 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 3vw;
+}
+
+.page-content .projets-section .projets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-content .projets-section .projets .projet {
+    margin-right: 20px;
+    max-width: 195px;
+}
+
+.page-content .projets-section .projets .projet h4 {
+    margin: 0
+}
+
+.page-content .projets-section .projets .projet .description {
+    font-size: 10px;
+}
+
+.page-content .projets-section .projets .projet .dates {
+    font-size: 13px;
+    color: rgb(145 145 145);
+}
+
+footer {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+footer .colonne p {
+    font-size: 12px;
+    color: #ccc;
+    cursor: pointer;
+    text-decoration: none; /* enlever le bleu sur les liens */
+}
+
+
+
+
+
+@media screen and (max-width: 700px) { /* appliquer propriété propre a chaque taille d'ecran, mobile=700px, le 
+    code ne va s'exécuter QUE si la taille de l'ecran est inférieure ou égale a 700px */
+    nav {
+        justify-content: center;
+    }
+    nav ul {
+        display: none; /* pour masquer les ul */
+    }
+    
+    .page-content header { /* JE VEUX QUE MES ELEMENTS OCCUPENT 100% DE LA PLACE QUILS PEUVENT OCCUPER */
+        margin-top: 10%;
+        max-width: 100%; /* largeur maximale a ne pas dépasser */
+    }
+
+    .page-content .projets-section {
+        margin-top: 15%;
+    }
+
+    .page-content .projets-section h1{
+        font-size: 1.5em; /* "em" unité utilisé pour agrandir du texte de sa taille initiale*/
+    }
+
+    .page-content .projets-section .projets .projet {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+
+    }
+
+    footer {
+        justify-content: flex-start;
+    }
+    
+    footer .colonne {
+        width: 80%;
+    }
+
+}
